@@ -17,6 +17,10 @@ using std::string;
 using std::begin; using std::end;
 using std::invalid_argument;
 
+void reset(int &i) {
+	i = 0;
+}
+
 bool isShorter(const string &s1, const string &s2) {
 	return s1.size() < s2.size();
 }
@@ -35,6 +39,10 @@ string::size_type find_char(const string &s, char c, string::size_type &occurs) 
 }
 
 int main() {
+	int j = 42;
+	reset(j);
+	cout << "j = " << j << endl;
+
 	string s = "Hello world!";
 	string::size_type ctr = 0;
 	auto index = find_char(s, 'o', ctr);
